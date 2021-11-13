@@ -1,10 +1,15 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const ApplicationSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
+const ApplicationSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+  },
+  {
+    timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
   }
-})
+);
 
-module.exports =  mongoose.model('Application', ApplicationSchema)
+module.exports = mongoose.model("Application", ApplicationSchema);
