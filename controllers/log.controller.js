@@ -1,9 +1,10 @@
-'use strinct';
+'use strict';
+const Log = require('../models/log')
 
 class MainController {
-
+	// Create a new log
 	all(req, res, next) {
-		res.json({ message: 'Example request.' });
+		const result = Log.create(req.body)
 	}
 
 	create(req, res, next) {
