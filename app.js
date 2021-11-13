@@ -28,6 +28,7 @@ db.once("open", function () {
 });
 
 app.use('/api', require('./routes/logs.routes'));
-app.use('/api', require('./routes/application.routes'))
+app.use('/api', require('./routes/application.routes'));
+app.use(require('./utils/errorHandler'));
 
 module.exports = app;
