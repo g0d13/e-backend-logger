@@ -1,12 +1,12 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 module.exports = validateToken = (req, res, next) => {
   // Check header authorization looking for bearer
-  const token = req.header('Authorization')?.split(' ')?.reverse()[0];
+  const token = req.header("Authorization")?.split(" ")?.reverse()[0];
 
   if (!token) {
     return res.status(401).json({
-      message: 'You must provide a token in headers',
+      message: "You must provide a token in headers",
     });
   }
 
@@ -16,7 +16,7 @@ module.exports = validateToken = (req, res, next) => {
     next();
   } catch (error) {
     return res.status(500).json({
-      message: 'Error while decrypting token',
+      message: "Error while decrypting token",
     });
   }
 };
