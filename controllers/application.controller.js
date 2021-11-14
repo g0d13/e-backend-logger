@@ -11,7 +11,7 @@ class ApplicationController {
   async create(req, res) {
     const { body } = req;
     const app = await Application.create(body);
-    return res.json({ name: app.name, id: app._id });
+    return res.status(201).json(app);
   }
 
   async findAll(req, res) {
