@@ -2,7 +2,13 @@
 
 ## Getting started
 Create a new .env file based on the .env.example file.
-Modify it by adding your own url to mongo, and your own secret key
+
+Modify it adding your own MONGO_DB url, and your own secret key
+
+Install dependencies
+```
+npm install
+```
 
 ## RESTful api documentation
 
