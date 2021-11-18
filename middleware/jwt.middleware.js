@@ -2,9 +2,9 @@ const jwt = require("jsonwebtoken");
 
 module.exports = validateToken = (req, res, next) => {
   // Check header authorization looking for bearer
-  const token = req.header("Authorization")?.split(" ")?.reverse()[0];
+  const token = req.header("Authorization") ? req.header("Authorization")  : "";
 
-  if (!token) {
+  if (!token || token === "") {
     return res.status(401).json({
       message: "You must provide a token in headers",
     });
