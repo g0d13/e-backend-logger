@@ -5,6 +5,8 @@ const router = require("express").Router();
 const prefix = "/apps";
 
 const controller = require("../controllers/application.controller");
+const { CreateAppDto } = require("../dto/appDto");
+
 
 const validator = require("express-joi-validation").createValidator({
   passError: true,
@@ -21,6 +23,6 @@ router.post(
   controller.auth
 );
 // create a new app
-router.post(`${prefix}/`, controller.create);
+router.post(`${prefix}/`, validator.body(CreateAppDto), controller.create);
 
 module.exports = router;

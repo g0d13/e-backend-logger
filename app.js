@@ -23,7 +23,7 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
-  console.log("Connected successfully");
+  console.log("MongoDB connected successfully");
 });
 
 app.use("/api", require("./routes/logs.routes"));

@@ -26,4 +26,5 @@ const UpdateLogDto = Joi.object({
   response: Joi.object(),
 });
 
+
 module.exports = { CreateLogDto, UpdateLogDto };
